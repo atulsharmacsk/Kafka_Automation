@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="KafkaProducerConsumerTestSuite">
+    <!-- Suite configuration -->
+    <test name="KafkaProducerConsumerTest">
+        <classes>
+            <!-- Specify the test class to run -->
+            <class name="org.example.KafkaTest"/>
+        </classes>
+    </test>
+</suite>
