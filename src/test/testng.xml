@@ -4,7 +4,7 @@
     <test name="KafkaProducerConsumerTest">
         <classes>
             <!-- Specify the test class to run -->
-            <class name="org.example.KafkaTest"/>
+            <class name="org.example.KafkaUserTest"/>
         </classes>
     </test>
 </suite>

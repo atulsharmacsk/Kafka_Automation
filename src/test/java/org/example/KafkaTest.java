@@ -3,6 +3,8 @@ package org.example;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.common.serialization.StringDeserializer;
+import org.apache.kafka.common.serialization.StringSerializer;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -22,8 +24,8 @@ public class KafkaTest {
 
     @BeforeClass
     public void setup() {
-        producer = initilizeKafkaProducer();
-        consumer = initilizeKafkaConsumer();
+        producer = initilizeKafkaProducer(StringSerializer.class);
+        consumer = initilizeKafkaConsumer(StringDeserializer.class);
     }
 
     @Test
@@ -53,13 +55,7 @@ public class KafkaTest {
 
     @AfterClass
     public void tearDown() {
-        // Close the producer and consumer
-        if (producer != null) {
-            producer.close();
-        }
-        if (consumer != null) {
-            consumer.close();
-        }
+        if (producer != null) producer.close();
+        if (consumer != null) consumer.close();
     }
-
 }
